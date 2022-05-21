@@ -14,6 +14,10 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Scanner;
 
+/**
+ * FileReaderInput handles reading input from file
+ */
+
 public class FileReaderInput implements InputService {
 
     private final String filename;

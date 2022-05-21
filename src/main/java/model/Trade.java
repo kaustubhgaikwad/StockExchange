@@ -2,6 +2,12 @@ package model;
 
 import java.math.BigDecimal;
 
+/**
+ * Trad Entity Class
+ * Which represents the trade that is recorded by matching buy and sell orders
+ * This is directly the output of the problem statement
+ */
+
 public class Trade {
     private final String buyOrderId;
     private final BigDecimal sellPrice;

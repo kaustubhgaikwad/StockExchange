@@ -9,6 +9,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * FirstInFirstOut Price-Time order-matching rule implementing OrderMatchingRule
+ */
+
 public class FIFOOrderMatchingRule implements OrderMatchingRule {
     @Override
     public List<Trade> matchOrder(Map<Stock, List<Order>> sellOrders, Map<Stock, List<Order>> buyOrders) {

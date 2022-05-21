@@ -1,5 +1,9 @@
 package model;
 
+/**
+ * InputParameters entity class for storing all type parameters
+ * Currently contains only fileName
+ */
 public class InputParameters {
     private String fileName;
 

@@ -1,5 +1,10 @@
 package model;
 
+/**
+ * Stock Entity class to represent a particular
+ * hasCode and equal method to make it distinctive only based the name of the stock
+ */
+
 public class Stock {
     private final String name;
 

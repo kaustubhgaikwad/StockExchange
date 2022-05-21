@@ -10,6 +10,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * OrderManagementSerivec
+ * Responsible for handling all operations relared to buy and sell orders
+ */
 public class OrderManagementService {
 
     private Map<Stock, List<Order>> buyOrders;
@@ -61,6 +65,10 @@ public class OrderManagementService {
         return tradesRegistered;
     }
 
+    /**
+     * Removed the orders which are already matched
+     * [When buy/sell order's are matched it's quantity is set to 0 to mark them eligible for removal]
+     */
     private void cleanUpMatchedTrades() {
         List<Order> matchedSellOrderList = new ArrayList<>();
         sellOrders.forEach((stock, order) -> {

@@ -4,6 +4,10 @@ import model.Trade;
 
 import java.util.List;
 
+/**
+ * OutputService responsible for handling console output
+ */
+
 public class CLIOutput implements OutputService {
 
     @Override

@@ -3,6 +3,9 @@ package model;
 import java.math.BigDecimal;
 import java.time.LocalTime;
 
+/**
+ * Order Entity class to store all the order details
+ */
 public class Order {
     private final String id;
     private final LocalTime time;
