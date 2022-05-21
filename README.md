@@ -50,4 +50,6 @@ OUTPUT:
   
 #5 236.00 20 #6
   
+Note: 
+  Sample Input file  (input.txt) present under resources folder
   
