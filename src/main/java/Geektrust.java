@@ -8,7 +8,7 @@ import util.*;
 
 import java.util.List;
 
-public class Driver {
+public class Geektrust {
     public static void main(String[] args) {
 
         ParameterReader parameterReader = new ParameterReader(args);
