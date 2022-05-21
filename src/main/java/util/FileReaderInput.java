@@ -1,5 +1,6 @@
 package util;
 
+import com.google.common.base.Splitter;
 import model.Order;
 import model.OrderType;
 import model.Stock;
@@ -9,10 +10,7 @@ import java.io.FileNotFoundException;
 import java.math.BigDecimal;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Locale;
-import java.util.Scanner;
+import java.util.*;
 
 /**
  * FileReaderInput handles reading input from file
@@ -43,21 +41,23 @@ public class FileReaderInput implements InputService {
     }
 
     public Order readOrderFromLine(String inputLine) {
+        Splitter spaceSplitter = Splitter.on(' ').omitEmptyStrings().trimResults();
+        Iterator<String> tokenItr = spaceSplitter.split(inputLine).iterator();
+
         String id;
         LocalTime ordertime;
         Stock stock;
         OrderType orderType;
         BigDecimal price;
         int quantity;
-        String[] orderDetails = inputLine.split(" ");
-        id = orderDetails[0];
-        String time = orderDetails[1];
+        id = tokenItr.next();
+        String time = tokenItr.next();
         ordertime = LocalTime.parse(time, DateTimeFormatter.ofPattern("HH:mm", Locale.getDefault()));
-        String stockName = orderDetails[2];
+        String stockName = tokenItr.next();
         stock = new Stock(stockName);
-        orderType = OrderType.valueOf(orderDetails[3].toUpperCase());
-        price = new BigDecimal(orderDetails[4]);
-        quantity = Integer.parseInt(orderDetails[5]);
+        orderType = OrderType.valueOf(tokenItr.next().toUpperCase());
+        price = new BigDecimal(tokenItr.next());
+        quantity = Integer.parseInt(tokenItr.next());
         return new Order(id, ordertime, stock, orderType, price, quantity);
     }
 }
